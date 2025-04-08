@@ -114,7 +114,7 @@ public class ScoreControler : MonoBehaviour
         score = 0; 
         timeRemaining = 60f; 
         isGameOver = false; 
-        Debug.Log(1);
+        //Debug.Log(1);
         UpdateScoreUI();
         UpdateTimerUI();
     }
