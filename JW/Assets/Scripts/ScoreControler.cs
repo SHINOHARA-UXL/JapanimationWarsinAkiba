@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class ScoreControler : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class ScoreControler : MonoBehaviour
     public static int score = 0;
     private float timeRemaining = 60f;
     private bool isGameOver = false;
+    public UnityEngine.UI.Slider slider;
 
     void Awake()
     {
@@ -28,9 +30,9 @@ public class ScoreControler : MonoBehaviour
         }
         score = 0;  // スコアのリセット
         timeRemaining = 60f;  // タイマーのリセット
-        Debug.Log(timeRemaining);
+        //Debug.Log(timeRemaining);
         isGameOver = false;
-        Debug.Log(isGameOver);
+        //Debug.Log(isGameOver);
         //UpdateScoreUI();
         //UpdateTimerUI();
     }
@@ -39,11 +41,13 @@ public class ScoreControler : MonoBehaviour
     {
         UpdateScoreUI();
         UpdateTimerUI();
-        Debug.Log(9);
+        //Debug.Log(9);
     }
 
     void Update()
     {
+        float currentValue = slider.value;
+
         //Debug.Log(timeRemaining);
         if (!isGameOver)
         {
@@ -56,6 +60,11 @@ public class ScoreControler : MonoBehaviour
                 timeRemaining = 0;
                 GameOver();
             }
+        }
+
+        if (currentValue <= 0)
+        {
+            timeRemaining = 0;
         }
     }
 
@@ -80,10 +89,10 @@ public class ScoreControler : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log(5);
+        //Debug.Log(5);
         isGameOver = true;
         timerText.text = "Time: 0";
-        Debug.Log("Game Over! Your Score: " + score);
+        //Debug.Log("Game Over! Your Score: " + score);
         PlayerPrefs.SetInt("Score", score);
 
         Invoke("LoadGameOverScene", 0.1f);
@@ -101,9 +110,9 @@ public class ScoreControler : MonoBehaviour
 
     public void StartGame()
     {
-        score = 0;  // スコアのリセット
-        timeRemaining = 60f;  // タイマーのリセット
-        isGameOver = false;   // ゲームオーバーフラグのリセットS
+        score = 0; 
+        timeRemaining = 60f; 
+        isGameOver = false; 
         Debug.Log(1);
         UpdateScoreUI();
         UpdateTimerUI();

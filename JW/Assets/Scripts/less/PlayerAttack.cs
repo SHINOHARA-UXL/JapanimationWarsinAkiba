@@ -18,10 +18,10 @@ public class PlayerAttack : MonoBehaviour
     {
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
         isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName(attackAnimationState);
-        if (clipInfo[0].clip.name == attackAnimationState) 
+        /*if (clipInfo[0].clip.name == attackAnimationState) 
         { 
-            Debug.Log(3); 
-        }
+            //Debug.Log(3); 
+        }*/
     }
 
     void OnCollisionEnter(Collision collision)

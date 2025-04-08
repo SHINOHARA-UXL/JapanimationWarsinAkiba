@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
 
     void OnDestroy()
     {
-        audioSource.PlayOneShot(deathSound);
+        //audioSource.PlayOneShot(deathSound);
         if (ScoreControler.instance != null)
         {
             ScoreControler.instance.AddScore(pointValue);
