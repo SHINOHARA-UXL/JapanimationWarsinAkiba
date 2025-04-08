@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class EnemysAttack : MonoBehaviour
 {
-    [SerializeField] GameObject ballPrefab; // 玉のプレハブ
-    [SerializeField] Transform firePoint;         // 発射位置
-    private float fireForce = 15f;       // 発射力
-    private float fireInterval = 1.0f;     // 発射間隔
+    [SerializeField] GameObject ballPrefab;
+    [SerializeField] Transform firePoint; 
+    private float fireForce = 15f;
+    private float fireInterval = 1.0f;
 
     private float fireTimer;
 
@@ -22,12 +22,11 @@ public class EnemysAttack : MonoBehaviour
 
     public void Fire()
     {
-        // 敵の前方にずらした位置に生成
+        // 敵の前方にずらした位置に生成　高さも調整
         Vector3 spawnPos = transform.position + transform.forward * 1.0f;
         spawnPos.y += 1.0f;
         GameObject ball = Instantiate(ballPrefab, spawnPos, transform.rotation);
 
-        // Rigidbody に前方への力を加える
         Rigidbody rb = ball.GetComponent<Rigidbody>();
         if (rb != null)
         {

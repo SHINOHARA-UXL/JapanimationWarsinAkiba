@@ -55,7 +55,7 @@ public class PlayerCollision : MonoBehaviour
     
     }
 
-    void OnTriggerEnter(Collider hit)
+    void OnTriggerEnter(Collider hit)//“G‚ÌUŒ‚‚É‚ ‚½‚Á‚½ê‡
     {
         if (hit.gameObject.CompareTag("ball"))
         {

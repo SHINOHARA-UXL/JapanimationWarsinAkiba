@@ -25,12 +25,12 @@ public class GameOver : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    public void RestartGame()//‚à‚¤ˆê“x—V‚Ô
     {
         SceneManager.LoadScene("GameScene");
     }
 
-    public void GoToMainMenu()
+    public void GoToMainMenu()//ƒz[ƒ€‚É–ß‚é
     {
         SceneManager.LoadScene("StartScene");
     }

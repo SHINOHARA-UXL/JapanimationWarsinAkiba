@@ -28,8 +28,9 @@ public class ScoreControler : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        score = 0;  // スコアのリセット
-        timeRemaining = 60f;  // タイマーのリセット
+        //リセット
+        score = 0;
+        timeRemaining = 60f;
         //Debug.Log(timeRemaining);
         isGameOver = false;
         //Debug.Log(isGameOver);
@@ -46,7 +47,7 @@ public class ScoreControler : MonoBehaviour
 
     void Update()
     {
-        float currentValue = slider.value;
+        float currentValue = slider.value;//残りHP
 
         //Debug.Log(timeRemaining);
         if (!isGameOver)
